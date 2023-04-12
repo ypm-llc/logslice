@@ -108,7 +108,7 @@ function badRequest(c:Context, summary:string, err: Error) {
 
 function internalServerError(c:Context, summary:string, err: Error) {
     c.status(500)
-    return c.json(buildErrorResponse(500, summary, err)).status(500)
+    return c.json(buildErrorResponse(500, summary, err))
 }
 
 serve(app.fetch)
