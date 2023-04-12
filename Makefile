@@ -1,2 +1,2 @@
 run:
-	denon run --allow-net --allow-env --allow-read hello.ts
+	denon run --allow-net --allow-env --allow-read app.ts
