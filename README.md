@@ -1,6 +1,6 @@
 # logslice
 
-Japanized Advisor API for error messages (use ChatGPT v3.5)
+Error Message Advisor API in Japanese (using ChatGPT v3.5)
 
 ## how to up
 
