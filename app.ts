@@ -23,9 +23,9 @@ app.use('*', logger())
 
 app.get('/', (c) => c.text('Hello Hono!'))
 app.post('/query', async (c) => {
-    var reqBody:PostLogsRequest = {logs: []};
+    let reqBody:PostLogsRequest = {logs: []}
     try {
-        reqBody = await c.req.json()
+        reqBody = await c.req.json() as PostLogsRequest
     } catch (e) {
         console.log(`request error: ${e}`)
         return badRequest(c, "request error", e)
@@ -34,7 +34,7 @@ app.post('/query', async (c) => {
     const message = buildGPTRequestMessage(reqBody)
     const gptRes = await gpt.sendMessage(message)
     const resText = gptRes.text
-    var resJson:string = ""
+    let resJson = ""
     try {
         resJson = JSON.parse(resText)
     } catch (e) {
